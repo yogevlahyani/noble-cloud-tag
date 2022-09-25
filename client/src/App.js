@@ -13,7 +13,7 @@ function App() {
   const getTags = useCallback(async () => {
     const { data } = await axios.get("http://localhost:3000/tags");
 
-    setTags(() => Object.keys(data).map(text => ({ text, value: data[text] })));
+    setTags(data);
   }, []);
 
   useEffect(() => {
